@@ -11,11 +11,12 @@ import UIKit
 
 struct User{
     var username: String
+    var password: String
     var name: String
     var lastname: String
     var age: Int
-    var address: Address
+    var address: Address?
     var phone: String
-    var userImage: UIImage
+    var userImage: UIImage?
     var rating: Int
 }
