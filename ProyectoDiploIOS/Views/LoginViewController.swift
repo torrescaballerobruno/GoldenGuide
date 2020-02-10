@@ -24,15 +24,12 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         if let usr = user.text, let pwd = password.text{
             let user = User(username: usr,password: pwd, name: "Bruno", lastname: "Torres", age: 23, address: nil, phone: "12345", userImage: nil, rating: 5)
-            print(user)
-            print(userServices.addUser(user: user))
         }
-        print("Iniciar sesion")
     }
     
     
     @IBAction func register(_ sender: UIButton) {
-        print("registro")
+        present(RegisterViewController(), animated: true, completion: nil)
     }
     
     

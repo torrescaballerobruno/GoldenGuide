@@ -13,4 +13,7 @@ struct Address{
     var state: String
     var neighborhood: String
     var zipcode: String
+    var street: String
+    var outdoorNumber: String
+    var interiorNumber: String?
 }

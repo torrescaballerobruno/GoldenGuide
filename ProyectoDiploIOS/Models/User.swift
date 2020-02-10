@@ -18,5 +18,5 @@ struct User{
     var address: Address?
     var phone: String
     var userImage: UIImage?
-    var rating: Int
+    var rating: Int?
 }
