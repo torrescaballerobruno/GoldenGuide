@@ -11,6 +11,7 @@ import UIKit
 
 struct Service {
     var id: String
+    var Title: String
     var description: String
     var price: Double
     var rating: Int

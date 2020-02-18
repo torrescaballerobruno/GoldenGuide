@@ -28,6 +28,8 @@
 		E1A2D60623EA5F8800AF3ADA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1A2D60523EA5F8800AF3ADA /* GoogleService-Info.plist */; };
 		E1A2D60823EA63A300AF3ADA /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A2D60723EA63A300AF3ADA /* RegisterViewController.xib */; };
 		E1A2D60A23EA63C700AF3ADA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D60923EA63C700AF3ADA /* RegisterViewController.swift */; };
+		E1A2D63723FA2A5B00AF3ADA /* ServicioUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D63523FA2A5B00AF3ADA /* ServicioUIViewController.swift */; };
+		E1A2D63823FA2A5B00AF3ADA /* ServicioUIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A2D63623FA2A5B00AF3ADA /* ServicioUIViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		E1A2D60523EA5F8800AF3ADA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E1A2D60723EA63A300AF3ADA /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		E1A2D60923EA63C700AF3ADA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E1A2D63523FA2A5B00AF3ADA /* ServicioUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicioUIViewController.swift; sourceTree = "<group>"; };
+		E1A2D63623FA2A5B00AF3ADA /* ServicioUIViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicioUIViewController.xib; sourceTree = "<group>"; };
 		F16D1AB63EC7760793E5CB98 /* Pods_ProyectoDiploIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoDiploIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,10 +85,9 @@
 		773B728B239B434700087370 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				773B728C239B436A00087370 /* LoginViewController.swift */,
 				773B728D239B436B00087370 /* LoginViewController.xib */,
 				E1A2D60723EA63A300AF3ADA /* RegisterViewController.xib */,
-				E1A2D60923EA63C700AF3ADA /* RegisterViewController.swift */,
+				E1A2D63623FA2A5B00AF3ADA /* ServicioUIViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,6 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				E12A791C23989319003C7F42 /* ViewController.swift */,
+				773B728C239B436A00087370 /* LoginViewController.swift */,
+				E1A2D60923EA63C700AF3ADA /* RegisterViewController.swift */,
+				E1A2D63523FA2A5B00AF3ADA /* ServicioUIViewController.swift */,
 			);
 			path = ViewsControllers;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 				E1A2D60623EA5F8800AF3ADA /* GoogleService-Info.plist in Resources */,
 				E12A79222398931E003C7F42 /* Assets.xcassets in Resources */,
 				E12A792023989319003C7F42 /* Main.storyboard in Resources */,
+				E1A2D63823FA2A5B00AF3ADA /* ServicioUIViewController.xib in Resources */,
 				E1A2D60823EA63A300AF3ADA /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +316,7 @@
 				E12A79432399FD3C003C7F42 /* ServiceServices.swift in Sources */,
 				E12A79342398A1ED003C7F42 /* Comment.swift in Sources */,
 				E12A79362398A567003C7F42 /* User.swift in Sources */,
+				E1A2D63723FA2A5B00AF3ADA /* ServicioUIViewController.swift in Sources */,
 				E12A793023989EC2003C7F42 /* Service.swift in Sources */,
 				E1A2D60A23EA63C700AF3ADA /* RegisterViewController.swift in Sources */,
 				E12A791923989319003C7F42 /* AppDelegate.swift in Sources */,
