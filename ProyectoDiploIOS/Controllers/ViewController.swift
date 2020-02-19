@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userSelected(_ sender: UIButton) {
-        let foo = LoginViewController()
+//        let foo = LoginViewController()
+//        present(foo, animated: true)
+        let foo =  RegisterViewController()
         present(foo, animated: true)
         
     }

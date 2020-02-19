@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
-            <connections>
-                <outlet property="ageTF" destination="gq6-fh-y60" id="NYt-yE-4mQ"/>
-                <outlet property="cityTF" destination="H3i-5g-bdI" id="B7I-H8-hV9"/>
-                <outlet property="interiorNumberTF" destination="6r2-QE-87f" id="oGR-rQ-Fvs"/>
-                <outlet property="lastNameTF" destination="Afs-kT-9I0" id="9pa-w6-pBG"/>
-                <outlet property="nameTF" destination="Loh-SL-GSZ" id="oRI-Kk-Fiz"/>
-                <outlet property="neighborhoodTF" destination="g0D-hr-09j" id="0yp-ro-7gW"/>
-                <outlet property="numberTF" destination="ipj-My-Xug" id="etq-hf-PCK"/>
-                <outlet property="outdoorNumberTF" destination="miQ-vO-a1p" id="igZ-Oo-nQz"/>
-                <outlet property="password2TF" destination="dxg-xr-Zsy" id="iKe-BW-eQn"/>
-                <outlet property="passwordTF" destination="Rsg-co-aQq" id="agF-22-kAt"/>
-                <outlet property="stateTF" destination="GDr-8E-10y" id="T8d-3q-cdS"/>
-                <outlet property="streetTF" destination="xo0-To-8pU" id="hsu-tB-7HK"/>
-                <outlet property="userTF" destination="fMy-lM-3pi" id="r3u-oT-q5v"/>
-                <outlet property="zipCodeTF" destination="366-nt-aO0" id="v49-UJ-VH0"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="ProyectoDiploIOS" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -215,9 +198,6 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                     <state key="normal" title="Aceptar"/>
-                    <connections>
-                        <action selector="acceptBtn:" destination="-1" eventType="touchUpInside" id="pLQ-cV-8Bi"/>
-                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Codigo Postal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd1-El-NPg">
                     <rect key="frame" x="43" y="617" width="111" height="21"/>

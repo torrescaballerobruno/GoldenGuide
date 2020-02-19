@@ -6,10 +6,14 @@ target 'ProyectoDiploIOS' do
   use_frameworks!
 
   # Pods for ProyectoDiploIOS
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
-pod 'Firebase/Storage'
-pod 'FirebaseUI'
+	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
+	pod 'Firebase/Storage'
+	pod 'FirebaseUI'
 
+	target 'ProyectoDiploIOSTests' do
+ 		inherit! :search_paths
+ 		# Pods for testing
+ 	end
 end
