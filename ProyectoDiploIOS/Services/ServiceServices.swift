@@ -57,7 +57,7 @@ class ServiceServices{
                     let rating = values["rating"] as? String ?? "sin valor"
                     let hirings = values["hirings"] as? String ?? "sin precio"
 
-                    services.append(Service(id: id, description: description, price: Double(price)!, rating: Int(rating)!, pictures: nil, hirings: Int(hirings)!, comments: nil))
+//                    services.append(Service(id: id, description: description, price: Double(price)!, rating: Int(rating)!, pictures: nil, hirings: Int(hirings)!, comments: nil))
 
                 }
             }

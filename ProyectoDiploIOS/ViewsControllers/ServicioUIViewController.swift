@@ -11,24 +11,29 @@ import UIKit
 class ServicioUIViewController: UIViewController {
 
     @IBOutlet weak var serviceImage: UIImageView!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var comments: UIButton!
-    @IBOutlet weak var rating: UILable!
-    @IBOutlet weak var description : UITextView!
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var descriptionTextView : UITextView!
     
-    private service: Service?
+    private var service: Service?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
-    init(service: Service) {
-        self.service = service
-        self.title.text = service.title
-        
-    }
+//    init(service: Service) {
+//        super.init()
+//        self.service = service
+//        self.titleLabel.text = service.title
+//
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     /*
     // MARK: - Navigation
 
@@ -40,14 +45,3 @@ class ServicioUIViewController: UIViewController {
     */
 
 }
-/*
- struct Service {
-     var id: String
-     var description: String
-     var price: Double
-     var rating: Int
-     var pictures: [UIImage]?
-     var hirings: Int
-     var comments: [Comment]?
- }
- **/

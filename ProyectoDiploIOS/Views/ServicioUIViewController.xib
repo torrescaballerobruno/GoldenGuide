@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,10 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ServicioUIViewController" customModule="ProyectoDiploIOS" customModuleProvider="target">
             <connections>
                 <outlet property="comments" destination="aCc-SF-3LW" id="4L0-an-2BH"/>
-                <outlet property="description" destination="xPW-1N-qla" id="hxj-sc-F7g"/>
+                <outlet property="descriptionTextView" destination="xPW-1N-qla" id="SqW-XS-y5C"/>
                 <outlet property="rating" destination="v4w-uu-tDZ" id="rqd-hw-ovt"/>
                 <outlet property="serviceImage" destination="Iqv-rQ-le0" id="TPC-ZK-fOe"/>
-                <outlet property="title" destination="LtI-yo-S2f" id="t2m-0t-FUw"/>
+                <outlet property="titleLabel" destination="LtI-yo-S2f" id="VNi-41-JZF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
