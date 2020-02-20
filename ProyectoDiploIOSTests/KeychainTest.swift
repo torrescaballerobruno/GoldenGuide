@@ -17,14 +17,14 @@ class KeychainTest: XCTestCase {
         XCTAssertNil(key)
     }
     
-    func saveKeyTest(){
+    func testSaveKey(){
         KeychainManager.shared.saveKey(data: "foo", key: "bar")
         let key = KeychainManager.shared.retrieveKey(key: "bar")
         XCTAssertNotNil(key)
         XCTAssertEqual(key, "foo")
     }
     
-    func deleteKeyTest(){
+    func testDeleteKey(){
         KeychainManager.shared.saveKey(data: "test", key: "foo")
         KeychainManager.shared.deleteKey(key: "foo")
         let key = KeychainManager.shared.retrieveKey(key: "foo")
