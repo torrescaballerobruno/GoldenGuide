@@ -7,42 +7,66 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var user: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var userEmail: UITextField!
+    @IBOutlet weak var userPass: UITextField!
+    
+    var isUser: Bool!
+    var nameImage: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        isLoged()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        imageView.image = UIImage(named: nameImage)
     }
 
 
     @IBAction func login(_ sender: UIButton) {
-        if let usr = user.text, let pwd = password.text{
-            let user = User(username: usr,password: pwd, name: "Bruno", lastname: "Torres", age: 23, address: nil, phone: "12345", userImage: nil, rating: 5)
+//        if let usr = user.text, let pwd = password.text{
+//            let user = User(username: usr,password: pwd, name: "Bruno", lastname: "Torres", age: 23, address: nil, phone: "12345", userImage: nil, rating: 5)
+//        }
+
+        guard let email = userEmail.text, email != "", let password = userPass.text, password != "" else {
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if let error = error{
+                print(error.localizedDescription)
+                return
+            }
+            print("usuario autenticado")
+            
+        }
+    }
+    
+    @IBAction func register(_ sender: UIButton) {
+        if isUser{
+            let register = RegisterUsersViewController()
+            present(register, animated: true)
         }
     }
     
     
-    @IBAction func register(_ sender: UIButton) {
-        present(RegisterViewController(), animated: true, completion: nil)
+    func isLoged(){
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user == nil{
+                print("Usuario no logeado")
+            }else{
+                print("Usuario logeado")
+                print(Auth.auth().currentUser!)
+//                self.performSegue(withIdentifier: "listView", sender: self)
+            }
+        }
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
