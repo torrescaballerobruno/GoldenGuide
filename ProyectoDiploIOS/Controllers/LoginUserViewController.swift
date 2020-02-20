@@ -22,26 +22,24 @@ class LoginUserViewController: UIViewController {
 
 
     @IBAction func login(_ sender: UIButton) {
-//        if let usr = user.text, let pwd = password.text{
-//            let user = User(username: usr,password: pwd, name: "Bruno", lastname: "Torres", age: 23, address: nil, phone: "12345", userImage: nil, rating: 5)
-//        }
 
         guard let email = userEmail.text, email != "", let password = userPass.text, password != "" else {
             return
         }
 
+//        Esto hay que ponerlo en otro archivo
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let error = error{
                 print(error.localizedDescription)
                 return
             }
             print("usuario autenticado")
-
         }
     }
 
     @IBAction func register(_ sender: UIButton) {
-        
+        let registerView = RegisterUsersViewController()
+        present(registerView, animated: true)
     }
 
 
@@ -52,7 +50,7 @@ class LoginUserViewController: UIViewController {
             }else{
                 print("Usuario logeado")
                 print(Auth.auth().currentUser!)
-//                self.performSegue(withIdentifier: "listView", sender: self)
+                self.performSegue(withIdentifier: "test", sender: self)
             }
         }
     }

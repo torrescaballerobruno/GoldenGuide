@@ -26,7 +26,7 @@ class LoginCommerceViewController: UIViewController {
 //            let user = User(username: usr,password: pwd, name: "Bruno", lastname: "Torres", age: 23, address: nil, phone: "12345", userImage: nil, rating: 5)
 //        }
 
-        guard let email = userEmail.text, email != "", let password = userPass.text, password != "" else {
+        guard let email = commerceEmail.text, email != "", let password = commercePass.text, password != "" else {
             return
         }
 

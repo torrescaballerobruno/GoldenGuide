@@ -10,6 +10,8 @@
 		61831B4BB7608EF04F48F0FE /* Pods_ProyectoDiploIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D1AB63EC7760793E5CB98 /* Pods_ProyectoDiploIOS.framework */; };
 		770FBE7B23FF13EA00FBADA8 /* LoginUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770FBE7A23FF13EA00FBADA8 /* LoginUserViewController.swift */; };
 		770FBE7D23FF145C00FBADA8 /* LoginCommerceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770FBE7C23FF145C00FBADA8 /* LoginCommerceViewController.swift */; };
+		77698F2F23FF1F19000E2115 /* ListServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77698F2E23FF1F19000E2115 /* ListServicesViewController.swift */; };
+		77698F3323FF2774000E2115 /* UserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77698F3223FF2774000E2115 /* UserTabBarController.swift */; };
 		778EE60923FDB3F900BFB635 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778EE60723FDB3F900BFB635 /* ProfileViewController.swift */; };
 		778EE60A23FDB3F900BFB635 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778EE60823FDB3F900BFB635 /* ProfileViewController.xib */; };
 		778EE60E23FDD47800BFB635 /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778EE60D23FDD47800BFB635 /* KeychainSwiftDistrib.swift */; };
@@ -54,6 +56,8 @@
 		6F0FB2D3CDF1F74E7107C13F /* Pods-ProyectoDiploIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoDiploIOS.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoDiploIOS/Pods-ProyectoDiploIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		770FBE7A23FF13EA00FBADA8 /* LoginUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserViewController.swift; sourceTree = "<group>"; };
 		770FBE7C23FF145C00FBADA8 /* LoginCommerceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCommerceViewController.swift; sourceTree = "<group>"; };
+		77698F2E23FF1F19000E2115 /* ListServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesViewController.swift; sourceTree = "<group>"; };
+		77698F3223FF2774000E2115 /* UserTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabBarController.swift; sourceTree = "<group>"; };
 		778EE60723FDB3F900BFB635 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		778EE60823FDB3F900BFB635 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		778EE60D23FDD47800BFB635 /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				E12A791C23989319003C7F42 /* InitialViewController.swift */,
 				770FBE7A23FF13EA00FBADA8 /* LoginUserViewController.swift */,
 				770FBE7C23FF145C00FBADA8 /* LoginCommerceViewController.swift */,
+				77698F2E23FF1F19000E2115 /* ListServicesViewController.swift */,
+				77698F3223FF2774000E2115 /* UserTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77698F3323FF2774000E2115 /* UserTabBarController.swift in Sources */,
 				E12A793F2399F920003C7F42 /* ServerUserServices.swift in Sources */,
 				770FBE7D23FF145C00FBADA8 /* LoginCommerceViewController.swift in Sources */,
 				E12A79322398A1D3003C7F42 /* Address.swift in Sources */,
@@ -455,6 +462,7 @@
 				E1A2D63723FA2A5B00AF3ADA /* ServicioUIViewController.swift in Sources */,
 				770FBE7B23FF13EA00FBADA8 /* LoginUserViewController.swift in Sources */,
 				E12A793023989EC2003C7F42 /* Service.swift in Sources */,
+				77698F2F23FF1F19000E2115 /* ListServicesViewController.swift in Sources */,
 				778EE61023FDD4A000BFB635 /* KeychainManager.swift in Sources */,
 				E12A791923989319003C7F42 /* AppDelegate.swift in Sources */,
 				778EE62523FE07EB00BFB635 /* AlertsCreator.swift in Sources */,
