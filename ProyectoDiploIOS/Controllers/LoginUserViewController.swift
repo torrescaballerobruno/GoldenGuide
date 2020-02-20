@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginUserViewController.swift
 //  ProyectoDiploIOS
 //
 //  Created by Ricardo Hernández González on 06/12/19.
@@ -9,23 +9,15 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginUserViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var userEmail: UITextField!
     @IBOutlet weak var userPass: UITextField!
-    
-    var isUser: Bool!
-    var nameImage: String!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         isLoged()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        imageView.image = UIImage(named: nameImage)
     }
 
 
@@ -37,25 +29,22 @@ class LoginViewController: UIViewController {
         guard let email = userEmail.text, email != "", let password = userPass.text, password != "" else {
             return
         }
-        
+
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let error = error{
                 print(error.localizedDescription)
                 return
             }
             print("usuario autenticado")
-            
+
         }
     }
-    
+
     @IBAction func register(_ sender: UIButton) {
-        if isUser{
-            let register = RegisterUsersViewController()
-            present(register, animated: true)
-        }
+        
     }
-    
-    
+
+
     func isLoged(){
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user == nil{
@@ -69,4 +58,3 @@ class LoginViewController: UIViewController {
     }
 
 }
-
