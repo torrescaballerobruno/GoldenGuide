@@ -13,13 +13,20 @@ class LoginUserViewController: UIViewController {
 
     @IBOutlet weak var userEmail: UITextField!
     @IBOutlet weak var userPass: UITextField!
+    
+    var hand: AuthStateDidChangeListenerHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         isLoged()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(hand!)
+    }
 
     @IBAction func login(_ sender: UIButton) {
 
@@ -36,8 +43,6 @@ class LoginUserViewController: UIViewController {
                 return
             }
             print("usuario autenticado")
-            let viewController = UIStoryboard(name: "UserViews", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-            self.navigationController?.pushViewController(viewController, animated: true)
         }
         
     }
@@ -48,17 +53,17 @@ class LoginUserViewController: UIViewController {
     }
 
     func isLoged(){
-        Auth.auth().addStateDidChangeListener { (auth, user) in
+        hand = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user == nil{
                 print("Usuario no logeado")
             }else{
                 print("Usuario logeado")
-                print(Auth.auth().currentUser!)
-//                self.performSegue(withIdentifier: "test", sender: self)
+//                print(user?.uid)
                 let viewController = UIStoryboard(name: "UserViews", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         }
+        
     }
 
 }
