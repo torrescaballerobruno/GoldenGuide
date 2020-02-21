@@ -16,14 +16,6 @@ class ListServicesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.navigationItem.leftBarButtonItem = nil
-        self.navigationItem.setHidesBackButton(true, animated: true)
-        self.tabBarController?.navigationItem.hidesBackButton = true
-        self.navigationController?.navigationItem.setHidesBackButton(true, animated: false)
-    }
-    
 
     /*
     // MARK: - Navigation
