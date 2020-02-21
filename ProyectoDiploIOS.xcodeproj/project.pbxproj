@@ -125,6 +125,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		770FD7202400A3ED006AB589 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				778EE62623FE4D8500BFB635 /* RegisterUsersViewController.swift */,
+				770FBE7A23FF13EA00FBADA8 /* LoginUserViewController.swift */,
+				77698F2E23FF1F19000E2115 /* ListServicesViewController.swift */,
+				770FD71B240095E5006AB589 /* UserProfileViewController.swift */,
+				77698F3223FF2774000E2115 /* UserTabBarController.swift */,
+				770FD71D2400A0FD006AB589 /* EditProfileViewController.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		773B728B239B434700087370 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,15 +153,10 @@
 		773B7290239B45F200087370 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				778EE62623FE4D8500BFB635 /* RegisterUsersViewController.swift */,
+				770FD7202400A3ED006AB589 /* Users */,
 				E1A2D63523FA2A5B00AF3ADA /* ServicioUIViewController.swift */,
 				E12A791C23989319003C7F42 /* InitialViewController.swift */,
-				770FBE7A23FF13EA00FBADA8 /* LoginUserViewController.swift */,
 				770FBE7C23FF145C00FBADA8 /* LoginCommerceViewController.swift */,
-				77698F2E23FF1F19000E2115 /* ListServicesViewController.swift */,
-				77698F3223FF2774000E2115 /* UserTabBarController.swift */,
-				770FD71B240095E5006AB589 /* UserProfileViewController.swift */,
-				770FD71D2400A0FD006AB589 /* EditProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
