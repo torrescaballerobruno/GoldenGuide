@@ -10,9 +10,10 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-let userServices = UserServices()
 
 class UserServices{
+    
+    static let shared = UserServices()
     
     private let collection: String = "users"
     private var getRef: Firestore!
@@ -71,7 +72,7 @@ class UserServices{
     }
     
     private func toArray(_ user: User) ->[String: Any]{
-        let datos:[String: Any] = ["username": user.username,
+        let datos:[String: Any] = ["username": user.email,
                                    "name": user.name,
                                    "lastname": user.lastname,
                                    "age": user.age,

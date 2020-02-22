@@ -18,10 +18,13 @@ class LoginUserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        isLoged()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        isLoged()
+        userEmail.text = ""
+        userPass.text = ""
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,6 +64,8 @@ class LoginUserViewController: UIViewController {
 //                print(user?.uid)
                 let viewController = UIStoryboard(name: "UserViews", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
                 self.navigationController?.pushViewController(viewController, animated: true)
+                print("Logeado: ", auth.isSignIn(withEmailLink: user!.email!))
+                print(user!.email!)
             }
         }
         

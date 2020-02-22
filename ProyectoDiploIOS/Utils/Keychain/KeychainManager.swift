@@ -13,15 +13,15 @@ struct KeychainManager{
     static let shared = KeychainManager()
     private let keychain = KeychainSwift()
     
-    func retrieveKey(key: String) -> String?{
+    func retrieveData(key: String) -> String?{
         return keychain.get(key)
     }
     
-    func saveKey(data: String, key: String){
+    func saveData(data: String, key: String){
         keychain.set(data, forKey: key)
     }
     
-    func deleteKey(key: String){
+    func deleteData(key: String){
         keychain.delete(key) // Remove single key
     }
 }

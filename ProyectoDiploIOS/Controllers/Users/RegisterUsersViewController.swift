@@ -7,26 +7,68 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterUsersViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
+    @IBOutlet weak var confirmPassTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var neighborhoodTextField: UITextField!
+    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var zipcodeTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func register(_ sender: UIButton) {
+        guard let name = nameTextField.text, name != "",
+            let lastname = lastnameTextField.text, lastname != "",
+            let email = emailTextField.text, email != "",
+            let pass = passTextField.text, pass != "",
+            let confirmPass = confirmPassTextField.text, confirmPass != "",
+            let age = ageTextField.text, age != "",
+            let phone = phoneTextField.text, phone != "",
+            let city = cityTextField.text, city != "",
+            let state = stateTextField.text, state != "",
+            let neighborhood = neighborhoodTextField.text, neighborhood != "",
+            let street = streetTextField.text, street != "",
+            let zipcode = zipcodeTextField.text, zipcode != ""
+        else{
+            present(AlertsCreator(title: "Campos obligatorios", message: "No pueden dejarse vacios los campos").createAlert(), animated: true)
+            return
+        }
+        
+        if pass != confirmPass{
+            present(AlertsCreator(title: "Error en confirmacion", message: "Las contraseñas no coinciden").createAlert(), animated: true)
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: pass) { (authResult, error) in
+            if let error = error{
+                self.present(AlertsCreator(title: "Error al registrarse", message: error.localizedDescription).createAlert(), animated: true)
+                return
+            }
+            print(authResult?.user.uid)
+            do {
+                try Auth.auth().signOut()
+            } catch let signOutError as NSError {
+              print ("Error signing out: %@", signOutError)
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
-    */
 
 }
