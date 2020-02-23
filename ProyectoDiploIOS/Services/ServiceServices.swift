@@ -16,7 +16,7 @@ class ServiceServices{
     
     private let collection: String = "service"
     private var getRef: Firestore!
-    private var ref: DocumentReference? //is the current user
+    private var ref: DocumentReference?
 
     init(){
         getRef = Firestore.firestore()
@@ -35,11 +35,43 @@ class ServiceServices{
         return f
     }
     
-    /*func getAllServices(){
-        getRef.collection(collection).getDocuments { (<#QuerySnapshot?#>, <#Error?#>) in
-            <#code#>
+    func createService(service: Service,image: UIImage){
+        
+        ref = getRef.collection(collection).addDocument(data: service.toMap(), completion: {(error) in
+            if let error = error{
+                print(error.localizedDescription)
+            }else{
+                print("Se guardaron los datos")
+            }
+        })
+        if let imageOptimizada = image.jpegData(compressionQuality: 0.6){
+            uploadImage(imageData: imageOptimizada)
         }
-    }*/
+    }
+    
+    func uploadImage(imageData: Data){
+        let activityIndicator = UIActivityIndicatorView.init(style: .medium)
+        activityIndicator.startAnimating()
+        
+        
+        let storageReference = Storage.storage().reference()
+        guard let ref  = ref else {return}
+        let userImageRef = storageReference.child("/photos").child(ref.documentID)
+        let uploadMetadata = StorageMetadata()
+        
+        uploadMetadata.contentType = "image/jpeg"
+        
+        userImageRef.putData(imageData, metadata: uploadMetadata){
+            (storageMetadata,error) in
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+            if let error = error {
+                print(error.localizedDescription)
+            }else{
+                print("metadata: ", storageMetadata?.path)
+            }
+        }
+    }
     
     func getAllServices()->[Service]{
         var services = [Service]()
@@ -56,8 +88,9 @@ class ServiceServices{
                     let price = values["price"] as? String ?? "sin precio"
                     let rating = values["rating"] as? String ?? "sin valor"
                     let hirings = values["hirings"] as? String ?? "sin precio"
+                    let title = values["title"] as? String ?? ""
 
-//                    services.append(Service(id: id, description: description, price: Double(price)!, rating: Int(rating)!, pictures: nil, hirings: Int(hirings)!, comments: nil))
+                    services.append(Service(id: id, title: title, description: description, price: Double(price)!, rating: Int(rating)!, picture: nil, hirings: Int(hirings)!, comments: nil))
 
                 }
             }

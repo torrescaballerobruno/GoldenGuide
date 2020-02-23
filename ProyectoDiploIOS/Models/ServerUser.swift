@@ -9,14 +9,26 @@
 import Foundation
 import UIKit
 
-struct ServerUser{
+struct ServerUser : Mapper{
     var username: String
     var name: String
     var lastname: String
     var age: Int
     var address: Address
     var phone: String
-    var userImage: UIImage
+    var userImage: String?
     var services: [Service]
     var rating: Int
+    
+    func toMap() -> [String : Any] {
+        let data: [String: Any] = ["username": username,
+                                   "name": name,
+                                   "lastname": lastname,
+                                   "age": age,
+                                   "address": address.toMap(),
+                                   "phone": phone,
+                                   "userImage": userImage,
+                                   "rating": rating]
+        return data
+    }
 }

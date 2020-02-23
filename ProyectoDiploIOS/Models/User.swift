@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct User{
+struct User: Mapper{
     var email: String
     var password: String
     var name: String
@@ -19,4 +19,17 @@ struct User{
     var phone: String
     var userImage: String
     var rating: Int?
+    
+    func toMap() -> [String : Any] {
+        let data: [String: Any] = ["email": email,
+                                   "password":password,
+                                   "name":name,
+                                   "lastname": lastname,
+                                   "age": age,
+                                   "address":address?.toMap(),
+                                   "phone": phone,
+                                   "userImage": userImage,
+                                   "rating": rating]
+        return data
+    }
 }
