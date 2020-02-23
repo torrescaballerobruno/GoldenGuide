@@ -24,12 +24,18 @@ class RegisterUsersViewController: UIViewController {
     @IBOutlet weak var streetTextField: UITextField!
     @IBOutlet weak var zipcodeTextField: UITextField!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+          debugPrint ("Error signing out: %@", signOutError)
+        }
     }
 
     @IBAction func register(_ sender: UIButton) {
@@ -38,7 +44,7 @@ class RegisterUsersViewController: UIViewController {
             let email = emailTextField.text, email != "",
             let pass = passTextField.text, pass != "",
             let confirmPass = confirmPassTextField.text, confirmPass != "",
-            let age = ageTextField.text, age != "",
+            let ageString = ageTextField.text, ageString != "", let age = Int(ageString),
             let phone = phoneTextField.text, phone != "",
             let city = cityTextField.text, city != "",
             let state = stateTextField.text, state != "",
@@ -60,15 +66,17 @@ class RegisterUsersViewController: UIViewController {
                 self.present(AlertsCreator(title: "Error al registrarse", message: error.localizedDescription).createAlert(), animated: true)
                 return
             }
-            print(authResult?.user.uid)
-            do {
-                try Auth.auth().signOut()
-            } catch let signOutError as NSError {
-              print ("Error signing out: %@", signOutError)
+            
+            let user = User(userId: authResult!.user.uid, email: email, password: pass, name: name, lastname: lastname, age: age, address: Address(city: city, state: state, neighborhood: neighborhood, zipcode: zipcode, street: street), phone: phone, userImage: nil, rating: nil)
+            
+            let successRegister = FirestoreRepository.shared.addUser(user: user)
+            
+            if successRegister{
+                self.dismiss(animated: true, completion: nil)
+            }else{
+                self.present(AlertsCreator(title: "Error en Registro", message: "Hubo problemas para registrarse, por favor vuelva a intentar").createAlert(), animated: true)
             }
-            self.dismiss(animated: true, completion: nil)
         }
-        
     }
 
 }
