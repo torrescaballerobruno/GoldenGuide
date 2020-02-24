@@ -12,17 +12,21 @@ import FirebaseFirestore
 class UserProfileViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
     private let collectionName: String = "users"
     private var db: Firestore!
     
-    var user: User!{
+    var user: User?{
         didSet{
-            nameLabel.text = user.name
-            phoneLabel.text = user.phone
-            emailLabel.text = user.email
+            nameLabel.text = user?.name
+            phoneLabel.text = user?.phone
+            emailLabel.text = user?.email
+            if let imageUser = user?.userImage{
+                imageProfile.image = imageConvert.shared.convertBase64StringToImage(imageBase64String: imageUser)
+            }
         }
     }
     
@@ -35,6 +39,11 @@ class UserProfileViewController: UIViewController {
         if let userId = KeychainManager.shared.retrieveData(key: "userId"){
             getUser(userId: userId)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! EditProfileViewController
+        destination.user = self.user
     }
     
     func initialSetup(){

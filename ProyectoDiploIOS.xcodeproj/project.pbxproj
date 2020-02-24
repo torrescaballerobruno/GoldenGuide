@@ -15,6 +15,7 @@
 		770FD71E2400A0FD006AB589 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770FD71D2400A0FD006AB589 /* EditProfileViewController.swift */; };
 		770FD72224026DA7006AB589 /* FirestoreRepositoryForUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770FD72124026DA7006AB589 /* FirestoreRepositoryForUsers.swift */; };
 		770FD7242403647B006AB589 /* SevicesByCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770FD7232403647B006AB589 /* SevicesByCategoryCollectionViewController.swift */; };
+		770FD72624038545006AB589 /* imageConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770FD72524038544006AB589 /* imageConvert.swift */; };
 		77698F2F23FF1F19000E2115 /* ListServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77698F2E23FF1F19000E2115 /* ListServicesViewController.swift */; };
 		77698F3323FF2774000E2115 /* UserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77698F3223FF2774000E2115 /* UserTabBarController.swift */; };
 		778EE60E23FDD47800BFB635 /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778EE60D23FDD47800BFB635 /* KeychainSwiftDistrib.swift */; };
@@ -66,6 +67,7 @@
 		770FD71D2400A0FD006AB589 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		770FD72124026DA7006AB589 /* FirestoreRepositoryForUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepositoryForUsers.swift; sourceTree = "<group>"; };
 		770FD7232403647B006AB589 /* SevicesByCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevicesByCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		770FD72524038544006AB589 /* imageConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageConvert.swift; sourceTree = "<group>"; };
 		77698F2E23FF1F19000E2115 /* ListServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesViewController.swift; sourceTree = "<group>"; };
 		77698F3223FF2774000E2115 /* UserTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabBarController.swift; sourceTree = "<group>"; };
 		778EE60D23FDD47800BFB635 /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				778EE60C23FDD45800BFB635 /* Keychain */,
 				778EE62423FE07EA00BFB635 /* AlertsCreator.swift */,
+				770FD72524038544006AB589 /* imageConvert.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				77698F2F23FF1F19000E2115 /* ListServicesViewController.swift in Sources */,
 				778EE61023FDD4A000BFB635 /* KeychainManager.swift in Sources */,
 				E12A791923989319003C7F42 /* AppDelegate.swift in Sources */,
+				770FD72624038545006AB589 /* imageConvert.swift in Sources */,
 				778EE62523FE07EB00BFB635 /* AlertsCreator.swift in Sources */,
 				E12A79382398A949003C7F42 /* Hiring.swift in Sources */,
 				E12A791B23989319003C7F42 /* SceneDelegate.swift in Sources */,

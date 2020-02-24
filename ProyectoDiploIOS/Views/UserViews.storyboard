@@ -132,7 +132,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rYY-Dd-Sbr" kind="show" id="W0M-nA-cwT"/>
+                                    <segue destination="rYY-Dd-Sbr" kind="presentation" id="W0M-nA-cwT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -142,6 +142,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="Plc-iV-Lvu"/>
                     <connections>
                         <outlet property="emailLabel" destination="Vlz-FW-zty" id="vHN-fM-EJb"/>
+                        <outlet property="imageProfile" destination="Byv-mc-1k2" id="Opd-wF-9eJ"/>
                         <outlet property="nameLabel" destination="Nt2-32-hLK" id="8Kw-2i-FZW"/>
                         <outlet property="phoneLabel" destination="2ED-Af-KOx" id="q5e-4G-nds"/>
                     </connections>
@@ -200,6 +201,9 @@
                                 <state key="normal" title="Guardar">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveNewProfile:" destination="rYY-Dd-Sbr" eventType="touchUpInside" id="X8S-eo-HCs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -207,7 +211,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="yIS-ie-U7U"/>
                     <connections>
+                        <outlet property="email" destination="AZD-ZA-AWh" id="8Lb-Z5-BYh"/>
                         <outlet property="image" destination="G8x-06-u2z" id="EoQ-9H-BuY"/>
+                        <outlet property="name" destination="nuE-Yg-I2w" id="beq-KA-aW9"/>
+                        <outlet property="phone" destination="mga-PK-l41" id="7wx-GX-edc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gmc-PT-om4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

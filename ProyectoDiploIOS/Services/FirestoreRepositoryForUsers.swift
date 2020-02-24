@@ -63,10 +63,8 @@ class FirestoreRepositoryForUsers{
             let rating = data["rating"] as? Int
    
             var user2 = User(userId: userId, email: email, name: name, lastname: lastname, age: age, address: Address(city: city, state: state, neighborhood: neighborhood, zipcode: zipcode, street: street), phone: phone, userImage: userImage, rating: rating)
-            print("user: \(self.user)")
             self.user = user2
         }
-        print("user: \(self.user)")
         return user
     }
 
@@ -74,7 +72,7 @@ class FirestoreRepositoryForUsers{
     func modifUser(user: User) -> Bool{
         var f: Bool = true
         guard let ref = ref else{return false}
-        ref.updateData(toArray(user)) { (error) in
+        ref.updateData(user.toMap()) { (error) in
             if let error = error{
                 print(error.localizedDescription)
                 f = false
@@ -93,30 +91,5 @@ class FirestoreRepositoryForUsers{
             }
         }
         return f
-    }
-    
-
-//    Auxiliary functions to convert from object to [String: Any]
-    private func toArray(_ user: User) ->[String: Any]{
-        let datos:[String: Any] = ["email": user.email,
-                                   "name": user.name,
-                                   "lastname": user.lastname,
-                                   "age": user.age,
-                                   "address": toArrayAddress(user.address),
-                                   "phone": user.phone,
-                                   "imageProfile": user.userImage as Any,
-                                   "rating": user.rating as Any
-                                ]
-        return datos
-    }
-
-    private func toArrayAddress(_ address: Address) -> [String: Any]{
-        let datos = ["city": address.city,
-                     "state": address.state,
-                     "neighborhood": address.neighborhood,
-                     "zipcode": address.zipcode,
-                     "street": address.street
-                    ]
-        return datos
     }
 }
