@@ -43,17 +43,6 @@ class ServicioUIViewController: UICollectionViewCell {
         }*/
     }
     
-    /*struct Service {
-        var id: String
-        var title: String
-        var description: String
-        var price: Double
-        var rating: Int
-        var pictures: [UIImage]?
-        var hirings: Int
-        var comments: [Comment]?
-    }*/
-    
     /*
     // MARK: - Navigation
 

@@ -18,7 +18,7 @@ class LoginCommerceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        isLoged()
+        //isLoged()
     }
 
     @IBAction func loginCommerce(_ sender: UIButton) {
@@ -30,14 +30,17 @@ class LoginCommerceViewController: UIViewController {
             return
         }
 
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+        /*Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let error = error{
                 print(error.localizedDescription)
                 return
             }
             print("usuario autenticado")
-
-        }
+          */
+            let viewController = UIStoryboard(name: "ServicesViews", bundle: nil)
+                .instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+            self.navigationController?.pushViewController(viewController, animated: true)
+        //}
     }
 
     @IBAction func registerCommerce(_ sender: UIButton) {
@@ -52,7 +55,9 @@ class LoginCommerceViewController: UIViewController {
             }else{
                 print("Usuario logeado")
                 print(Auth.auth().currentUser!)
-//                self.performSegue(withIdentifier: "listView", sender: self)
+                
+                
+                
             }
         }
     }

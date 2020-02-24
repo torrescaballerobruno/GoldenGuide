@@ -53,7 +53,6 @@ class ServiceServices{
         let activityIndicator = UIActivityIndicatorView.init(style: .medium)
         activityIndicator.startAnimating()
         
-        
         let storageReference = Storage.storage().reference()
         guard let ref  = ref else {return}
         let userImageRef = storageReference.child("/photos").child(ref.documentID)
@@ -89,8 +88,9 @@ class ServiceServices{
                     let rating = values["rating"] as? String ?? "sin valor"
                     let hirings = values["hirings"] as? String ?? "sin precio"
                     let title = values["title"] as? String ?? ""
+                    let category = values["category"] as? String ?? "default"
 
-                    services.append(Service(id: id, title: title, description: description, price: Double(price)!, rating: Int(rating)!, picture: nil, hirings: Int(hirings)!, comments: nil))
+                    services.append(Service(id: id, title: title, description: description, price: Double(price)!, category: category, rating: Int(rating)!, picture: nil, hirings: Int(hirings)!, comments: nil))
 
                 }
             }

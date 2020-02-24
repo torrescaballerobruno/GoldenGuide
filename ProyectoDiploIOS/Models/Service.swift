@@ -14,6 +14,7 @@ struct Service : Mapper {
     var title: String
     var description: String
     var price: Double
+    var category: String
     var rating: Int
     var picture: String?
     var hirings: Int
@@ -25,10 +26,11 @@ struct Service : Mapper {
                                    "title": self.title,
                                    "descripcion": self.description,
                                    "price": self.price,
+                                   "category": self.category,
                                    "rating": self.rating,
                                    "picture": self.picture,
                                    "hirings": self.hirings]
-        
+
         return datos
     }
     
