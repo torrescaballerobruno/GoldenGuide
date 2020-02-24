@@ -25,3 +25,13 @@ struct Address : Mapper{
         return data
     }
 }
+
+//extension Address{
+//    init?(dictionary: [String : Any]) {
+//        guard   let name = dictionary["name"] as? String,
+//            let done = dictionary["done"] as? Bool
+//            else { return nil }
+//         
+//        self.init(name: name, done: done, id: id)
+//    }
+//}

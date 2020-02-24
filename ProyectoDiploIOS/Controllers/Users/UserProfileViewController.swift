@@ -7,18 +7,37 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class UserProfileViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    
+    private let collectionName: String = "users"
+    private var db: Firestore!
+    
+    var user: User!{
+        didSet{
+            nameLabel.text = user.name
+            phoneLabel.text = user.phone
+            emailLabel.text = user.email
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-//        nameLabel.clipsToBounds = true
-//        nameLabel.layer.borderColor = UIColor.black.cgColor
+        initialSetup()
+        db = Firestore.firestore()
+        
+        if let userId = KeychainManager.shared.retrieveData(key: "userId"){
+            getUser(userId: userId)
+        }
+    }
+    
+    func initialSetup(){
         nameLabel.layer.borderWidth = 0.5
         nameLabel.layer.cornerRadius = 8
         phoneLabel.layer.borderWidth = 0.5
@@ -27,15 +46,33 @@ class UserProfileViewController: UIViewController {
         emailLabel.layer.cornerRadius = 8
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    func getUser (userId: String){
+            
+    //        db.collection(collectionName).document(userId).getDocument{ (snapshot, error) in
+            db.collection(collectionName).document(userId).addSnapshotListener { (snapshot, error) in
+                if let error = error{
+                    debugPrint(error.localizedDescription)
+                    return
+                }
+                guard let data = snapshot?.data(),
+                    let userId = data["userId"] as? String,
+                    let email = data["email"] as? String,
+                    let name = data["name"] as? String,
+                    let lastname = data["lastname"] as? String,
+                    let age = data["age"] as? Int,
+                    let address = data["address"] as? [String: Any],
+                    let city = address["city"] as? String,
+                    let neighborhood = address["neighborhood"] as? String,
+                    let state = address["state"] as? String,
+                    let street = address["street"] as? String,
+                    let zipcode = address["zipcode"] as? String,
+                    let phone = data["phone"] as? String
+                    else { return }
+                
+                let userImage = data["userImage"] as? String
+                let rating = data["rating"] as? Int
+       
+                self.user = User(userId: userId, email: email, name: name, lastname: lastname, age: age, address: Address(city: city, state: state, neighborhood: neighborhood, zipcode: zipcode, street: street), phone: phone, userImage: userImage, rating: rating)
+            }
+        }
 }

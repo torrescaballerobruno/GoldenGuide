@@ -14,7 +14,6 @@ struct User: Mapper{
 
     var userId: String
     var email: String
-    var password: String
     var name: String
     var lastname: String
     var age: Int
@@ -26,14 +25,13 @@ struct User: Mapper{
     func toMap() -> [String : Any] {
         let data: [String: Any] = ["userId": userId,
                                    "email": email,
-                                   "password":password,
                                    "name":name,
                                    "lastname": lastname,
                                    "age": age,
                                    "address":address.toMap(),
                                    "phone": phone,
-                                   "userImage": userImage,
-                                   "rating": rating]
+                                   "userImage": userImage as Any,
+                                   "rating": rating as Any]
         return data
     }
 }

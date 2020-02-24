@@ -67,9 +67,11 @@ class RegisterUsersViewController: UIViewController {
                 return
             }
             
-            let user = User(userId: authResult!.user.uid, email: email, password: pass, name: name, lastname: lastname, age: age, address: Address(city: city, state: state, neighborhood: neighborhood, zipcode: zipcode, street: street), phone: phone, userImage: nil, rating: nil)
+            let user = User(userId: authResult!.user.uid, email: email, name: name, lastname: lastname, age: age, address: Address(city: city, state: state, neighborhood: neighborhood, zipcode: zipcode, street: street), phone: phone, userImage: nil, rating: nil)
             
-            let successRegister = FirestoreRepository.shared.addUser(user: user)
+            KeychainManager.shared.saveData(data: user.userId, key: "userId")
+            
+            let successRegister = FirestoreRepositoryForUsers.shared.addUser(user: user)
             
             if successRegister{
                 self.dismiss(animated: true, completion: nil)
