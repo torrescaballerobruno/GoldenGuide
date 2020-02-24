@@ -40,8 +40,6 @@ class ServiceServices{
         ref = getRef.collection(collection).addDocument(data: service.toMap(), completion: {(error) in
             if let error = error{
                 print(error.localizedDescription)
-            }else{
-                print("Se guardaron los datos")
             }
         })
         if let imageOptimizada = image.jpegData(compressionQuality: 0.6){
@@ -54,7 +52,7 @@ class ServiceServices{
         activityIndicator.startAnimating()
         
         let storageReference = Storage.storage().reference()
-        guard let ref  = ref else {return}
+        guard let ref  = ref else { return }
         let userImageRef = storageReference.child("/photos").child(ref.documentID)
         let uploadMetadata = StorageMetadata()
         
@@ -88,7 +86,7 @@ class ServiceServices{
                     let rating = values["rating"] as? String ?? "sin valor"
                     let hirings = values["hirings"] as? String ?? "sin precio"
                     let title = values["title"] as? String ?? ""
-                    let category = values["category"] as? String ?? "default"
+                    let category = values["category"] as? Category ?? Category(id: nil, type: "Default")
 
                     services.append(Service(id: id, title: title, description: description, price: Double(price)!, category: category, rating: Int(rating)!, picture: nil, hirings: Int(hirings)!, comments: nil))
 

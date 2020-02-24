@@ -63,6 +63,7 @@ class FirestoreRepositoryForUsers{
             let rating = data["rating"] as? Int
    
             var user2 = User(userId: userId, email: email, name: name, lastname: lastname, age: age, address: Address(city: city, state: state, neighborhood: neighborhood, zipcode: zipcode, street: street), phone: phone, userImage: userImage, rating: rating)
+
             self.user = user2
         }
         return user
@@ -92,4 +93,5 @@ class FirestoreRepositoryForUsers{
         }
         return f
     }
+
 }
