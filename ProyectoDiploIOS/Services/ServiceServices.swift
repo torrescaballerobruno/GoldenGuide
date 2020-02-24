@@ -70,7 +70,7 @@ class ServiceServices{
         }
     }
     
-    func getAllServices()->[Service]{
+    func getAllServices( complete: @escaping ([Service], _ error: Error?)->Void ) {
         var services = [Service]()
         getRef.collection(collection).getDocuments { (querySnapshot, error) in
             if let error = error {
@@ -86,13 +86,15 @@ class ServiceServices{
                     let rating = values["rating"] as? String ?? "sin valor"
                     let hirings = values["hirings"] as? String ?? "sin precio"
                     let title = values["title"] as? String ?? ""
-                    let category = values["category"] as? Category ?? Category(id: nil, type: "Default")
+                    let category = values["category"]  as? [String: String]
+                    let categoryType = category?["type"]
+                    let categoryO = Category(id: nil, type: categoryType ?? "Default")
 
-                    services.append(Service(id: id, title: title, description: description, price: Double(price)!, category: category, rating: Int(rating)!, picture: nil, hirings: Int(hirings)!, comments: nil))
+                    services.append(Service(id: id, title: title, description: description, price: Double(price)!, category: categoryO, rating: Int(rating)!, picture: nil, hirings: Int(hirings)!, comments: nil))
 
                 }
             }
+            complete(services,error)
         }
-        return services
     }
 }
