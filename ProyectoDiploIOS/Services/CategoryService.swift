@@ -39,8 +39,8 @@ class CategoryService{
                     let type = values["type"] as? String ?? "sin valor"
                     categories.append(Category(id: id, type: type))
                 }
-                complete(categories,error)
             }
+            complete(categories,error)
         }
     }
 }
