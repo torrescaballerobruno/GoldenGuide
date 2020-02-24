@@ -37,7 +37,7 @@ class ServerUserServices{
     
     func addUser (user: ServerUser)-> Bool{
         var f = true
-        ref = getRef.collection(collection).addDocument(data: toArray(user), completion: {(error) in
+        ref = getRef.collection(collection).addDocument(data: user.toMap(), completion: {(error) in
             if let error = error{
                 print(error.localizedDescription)
                 f = false
@@ -49,7 +49,7 @@ class ServerUserServices{
     func modifUser(user: ServerUser) -> Bool{
         var f: Bool = true
         guard let ref = ref else{return false}
-        ref.updateData(toArray(user)) { (error) in
+        ref.updateData(user.toMap()) { (error) in
             if let error = error{
                 print(error.localizedDescription)
                 f = false
@@ -70,16 +70,4 @@ class ServerUserServices{
         return f
     }
     
-    private func toArray(_ user: ServerUser) ->[String: Any]{
-        let datos:[String: Any] = ["username": user.username,
-                                   "name": user.name,
-                                   "lastname": user.lastname,
-                                   "age": user.age,
-                                   "address": user.address,
-                                   "phone": user.phone,
-                                   "rating": user.rating,
-                                   "services": user.services
-                                ]
-        return datos
-    }
 }

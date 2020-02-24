@@ -44,6 +44,9 @@
 		E1A2D63D2402FF9900AF3ADA /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D63C2402FF9900AF3ADA /* Mapper.swift */; };
 		E1A2D63F240308F600AF3ADA /* ServicesViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A2D63E240308F600AF3ADA /* ServicesViews.storyboard */; };
 		E1A2D6432403148B00AF3ADA /* CreateServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D6422403148B00AF3ADA /* CreateServiceViewController.swift */; };
+		E1A2D6452403677E00AF3ADA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D6442403677E00AF3ADA /* Category.swift */; };
+		E1A2D6472403680800AF3ADA /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D6462403680800AF3ADA /* CategoryService.swift */; };
+		E1A2D64924036A7300AF3ADA /* CategoryServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D64824036A7300AF3ADA /* CategoryServicesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,9 @@
 		E1A2D63C2402FF9900AF3ADA /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		E1A2D63E240308F600AF3ADA /* ServicesViews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServicesViews.storyboard; sourceTree = "<group>"; };
 		E1A2D6422403148B00AF3ADA /* CreateServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateServiceViewController.swift; sourceTree = "<group>"; };
+		E1A2D6442403677E00AF3ADA /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E1A2D6462403680800AF3ADA /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		E1A2D64824036A7300AF3ADA /* CategoryServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryServicesTests.swift; sourceTree = "<group>"; };
 		F16D1AB63EC7760793E5CB98 /* Pods_ProyectoDiploIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoDiploIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,6 +200,7 @@
 			children = (
 				778EE61A23FDD59000BFB635 /* Info.plist */,
 				778EE62023FDD5BA00BFB635 /* KeychainTest.swift */,
+				E1A2D64824036A7300AF3ADA /* CategoryServicesTests.swift */,
 			);
 			path = ProyectoDiploIOSTests;
 			sourceTree = "<group>";
@@ -256,6 +263,7 @@
 				E12A792D23989E94003C7F42 /* ServerUser.swift */,
 				E12A792F23989EC2003C7F42 /* Service.swift */,
 				E12A79352398A567003C7F42 /* User.swift */,
+				E1A2D6442403677E00AF3ADA /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 				770FD72124026DA7006AB589 /* FirestoreRepositoryForUsers.swift */,
 				E12A793E2399F920003C7F42 /* ServerUserServices.swift */,
 				E12A79422399FD3C003C7F42 /* ServiceServices.swift */,
+				E1A2D6462403680800AF3ADA /* CategoryService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -479,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				778EE62123FDD5BA00BFB635 /* KeychainTest.swift in Sources */,
+				E1A2D64924036A7300AF3ADA /* CategoryServicesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,12 +499,14 @@
 				77698F3323FF2774000E2115 /* UserTabBarController.swift in Sources */,
 				E12A793F2399F920003C7F42 /* ServerUserServices.swift in Sources */,
 				770FBE7D23FF145C00FBADA8 /* LoginCommerceViewController.swift in Sources */,
+				E1A2D6472403680800AF3ADA /* CategoryService.swift in Sources */,
 				E12A79322398A1D3003C7F42 /* Address.swift in Sources */,
 				E1A2D63D2402FF9900AF3ADA /* Mapper.swift in Sources */,
 				778EE62823FE4D8500BFB635 /* RegisterUsersViewController.swift in Sources */,
 				E12A792E23989E94003C7F42 /* ServerUser.swift in Sources */,
 				E12A791D23989319003C7F42 /* InitialViewController.swift in Sources */,
 				E12A79432399FD3C003C7F42 /* ServiceServices.swift in Sources */,
+				E1A2D6452403677E00AF3ADA /* Category.swift in Sources */,
 				770FD71C240095E5006AB589 /* UserProfileViewController.swift in Sources */,
 				770FD71E2400A0FD006AB589 /* EditProfileViewController.swift in Sources */,
 				E12A79342398A1ED003C7F42 /* Comment.swift in Sources */,
