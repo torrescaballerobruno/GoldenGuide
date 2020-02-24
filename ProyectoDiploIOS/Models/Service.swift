@@ -28,7 +28,7 @@ struct Service : Mapper {
                                    "price": self.price,
                                    "category": self.category.toMap(),
                                    "rating": self.rating,
-                                   "picture": self.picture,
+                                   "picture": self.picture!,
                                    "hirings": self.hirings]
 
         return datos

@@ -45,7 +45,7 @@ class LoginUserViewController: UIViewController {
                 self.present(AlertsCreator(title: "Error", message: "Email o password incorrectos").createAlert(), animated: true)
                 return
             }
-            print("usuario autenticado")
+//            print("usuario autenticado")
         }
         
     }
@@ -58,14 +58,11 @@ class LoginUserViewController: UIViewController {
     func isLoged(){
         hand = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user == nil{
-                print("Usuario no logeado")
+//                print("Usuario no logeado")
             }else{
-                print("Usuario logeado")
-//                print(user?.uid)
+//                print("Usuario logeado")
                 let viewController = UIStoryboard(name: "UserViews", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
                 self.navigationController?.pushViewController(viewController, animated: true)
-                print("Logeado: ", auth.isSignIn(withEmailLink: user!.email!))
-                print(user!.email!)
             }
         }
         

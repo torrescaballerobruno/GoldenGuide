@@ -62,7 +62,7 @@ class FirestoreRepositoryForUsers{
             let userImage = data["userImage"] as? String
             let rating = data["rating"] as? Int
    
-            var user2 = User(userId: userId, email: email, name: name, lastname: lastname, age: age, address: Address(city: city, state: state, neighborhood: neighborhood, zipcode: zipcode, street: street), phone: phone, userImage: userImage, rating: rating)
+            let user2 = User(userId: userId, email: email, name: name, lastname: lastname, age: age, address: Address(city: city, state: state, neighborhood: neighborhood, zipcode: zipcode, street: street), phone: phone, userImage: userImage, rating: rating)
 
             self.user = user2
         }

@@ -50,7 +50,7 @@ class CreateServiceViewController: UIViewController, UIImagePickerControllerDele
         return categories[row].type
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categorySelected = categories[row]
     }
     
@@ -60,7 +60,7 @@ class CreateServiceViewController: UIViewController, UIImagePickerControllerDele
         let photoImage = UIImagePickerController()
         photoImage.sourceType = UIImagePickerController.SourceType.photoLibrary
         photoImage.mediaTypes = [kUTTypeImage as String]
-        photoImage.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        photoImage.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
         
         present(photoImage,animated: true,completion: nil)
     }

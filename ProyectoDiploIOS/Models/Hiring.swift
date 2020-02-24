@@ -16,7 +16,7 @@ struct Hiring : Mapper{
     var date: Date
     
     func toMap() -> [String : Any] {
-        let data: [String: Any] = ["user": user.toMap(),
+        let data: [String: Any] = ["user": user.toMap(),
                                     "serverUser": serverUSer.toMap(),
                                     "service": service.toMap(),
                                     "finalPrice": finalPrice,

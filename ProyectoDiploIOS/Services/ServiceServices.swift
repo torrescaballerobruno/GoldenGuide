@@ -63,9 +63,9 @@ class ServiceServices{
             activityIndicator.stopAnimating()
             activityIndicator.removeFromSuperview()
             if let error = error {
-                print(error.localizedDescription)
+                debugPrint(error.localizedDescription)
             }else{
-                print("metadata: ", storageMetadata?.path)
+                debugPrint("metadata: \(String(describing: storageMetadata?.path))")
             }
         }
     }

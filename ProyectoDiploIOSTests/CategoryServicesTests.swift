@@ -41,7 +41,9 @@ class CategoryServicesTests: XCTestCase {
     }
     
     func testGetCategories() {
-        let cats = cs.getCategories()
+        let cats = cs.getCategories { (cat, error) in
+            
+        }
         print(cats)
         XCTAssertNotNil(cats)
     }

@@ -14,7 +14,7 @@ struct Category: Mapper{
     var type: String
 
     func toMap() -> [String : Any] {
-        let data: [String: Any] = ["id": id,
+        let data: [String: Any] = ["id": id as Any,
                                    "type": type]
         return data
     }

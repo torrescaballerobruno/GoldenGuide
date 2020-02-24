@@ -27,7 +27,7 @@ struct ServerUser : Mapper{
                                    "age": age,
                                    "address": address.toMap(),
                                    "phone": phone,
-                                   "userImage": userImage,
+                                   "userImage": userImage as Any,
                                    "rating": rating]
         return data
     }
