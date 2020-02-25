@@ -48,10 +48,19 @@ class ListServicesByCategoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! ServiceTableViewCell
 
+        if let imageService = services[indexPath.row].picture{
+            cell.imageView?.image = imageConvert.shared.convertBase64StringToImage(imageBase64String: imageService)
+        }//else{
+//            cell.imageView?.image = UIImage(named: "comercio")
+//        }
         cell.titleLabel.text = services[indexPath.row].title
         cell.descriptionTextView.text = services[indexPath.row].description
         cell.ratingLabel.text = String(services[indexPath.row].rating)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400.0
     }
     
     
@@ -66,17 +75,19 @@ class ListServicesByCategoryTableViewController: UITableViewController {
                 for document in querySnapshot!.documents{
                     let id = document.documentID
                     let values = document.data()
+                    print(values)
                     let title = values["title"] as? String ?? "sin titulo"
                     let description = values["descripcion"] as? String ?? "sin descripcion"
                     let price = values["price"] as? Double ?? 0.0
-                    let category = values["category"] as! [String : Any]
-                    let idCategory = category["id"] as? String ?? "sin category id"
-                    let typeCategory = category["type"] as? String ?? "sin nombre de categoria"
+//                    let category = values["category"] as! [String : Any]
+//                    let idCategory = category["id"] as? String ?? "sin category id"
+//                    let typeCategory = category["type"] as? String ?? "sin nombre de categoria"
+                    let pictureBase64 = values["picture"] as? String
                     let rating = values["rating"] as? Int ?? 0
                     let hiring = values["hirings"]  as? Int ?? 0
                     self.services.append(Service(id: id, title: title, description: description, price: price,
-                                                 category: Category(id: idCategory, type: typeCategory),
-                                                 rating: rating, picture: nil, hirings: hiring, comments: nil))
+                                                 category: Category(id: "idCategory", type: "typeCategory"),
+                                                 rating: rating, picture: pictureBase64, hirings: hiring, comments: nil))
                     
                 }
             self.tableView.reloadData()
